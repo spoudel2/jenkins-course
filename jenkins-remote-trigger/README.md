@@ -34,7 +34,7 @@ In order to make an external call using the "remoteuser" user, you’ll need to 
 11cbad49cd5efa500c663d7e4a934022f7
 
 ## Step 4: Enable the URL job trigger
-* Login using newly created user
+* Login using admin user
 
 Go to the job that you want to trigger and click Configure to edit the job. Under Build Triggers, check the box next to “Trigger Builds Remotely”. You’ll be asked to provide a secure token for validation. This should not in any way be related to the "remoteuser" user, so don’t reuse the password. You might want to generate a new key using a tool like the Random Key Generator. Click Save to save the job information.
 
