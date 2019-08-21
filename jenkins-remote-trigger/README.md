@@ -34,7 +34,7 @@ In order to make an external call using the "remoteuser" user, you’ll need to 
 11cbad49cd5efa500c663d7e4a934022f7
 
 ## Step 4: Enable the URL job trigger
-* Login using newly created user
+* Login using admin user
 
 Go to the job that you want to trigger and click Configure to edit the job. Under Build Triggers, check the box next to “Trigger Builds Remotely”. You’ll be asked to provide a secure token for validation. This should not in any way be related to the "remoteuser" user, so don’t reuse the password. You might want to generate a new key using a tool like the Random Key Generator. Click Save to save the job information.
 
@@ -55,7 +55,9 @@ The API token (after the colon)
 The authentication token
 All three must be correct, and the permissions for the user must be correct in Jenkins, in order for this URL to trigger the job. In order to trigger the job, you must send a POST request. You can test it out using cURL:
 
+```
 curl -X POST http://remoteuser:11cbad49cd5efa500c663d7e4a934022f7@52.87.207.81:8080/job/remote-build/build?token=wdvd87687we32y8tyc
+```
 
 Once you send the request, log in to Jenkins and verify that the job is running. You can then use this URL for most webhooks.
 
